@@ -1,0 +1,12 @@
+{
+  "name": "crate",
+  "version": "1.0.0",
+  "description": "a simple state object for vue",
+  "homepage": "https://github.com/simonburford/crate",
+  "main": "src/index.js",
+  "author": "Simon Burford",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  }
+}

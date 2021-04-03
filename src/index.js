@@ -19,7 +19,7 @@ const CrateProxy = {
 
 export default class Crate {
 	constructor(contents = {}) {
-		this.contents = new Vue.observable(contents ?? {});
-		return new Proxy(this.contents, CrateProxy);
+		const observable = new Vue.observable(contents);
+		return new Proxy(observable, CrateProxy);
 	}
 }

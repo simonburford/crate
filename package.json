@@ -4,6 +4,7 @@
   "description": "a simple state object for vue",
   "homepage": "https://github.com/simonburford/crate",
   "main": "src/index.js",
+  "type": "module",
   "author": "Simon Burford",
   "license": "MIT",
   "peerDependencies": {

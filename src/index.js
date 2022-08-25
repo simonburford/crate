@@ -5,13 +5,13 @@ const CrateProxy = {
 		if (prop in target) {
 			let value = target[prop];
 			if (value instanceof Function) {
-				return value.apply(new Proxy(target, CrateProxy));
+				return value(target);
 			}
 			return value;
 		}
 		return Reflect.get(target, prop, receiver)
 	},
-	set(target, prop, value, receiver) {
+	set(target, prop, value) {
 		Vue.set(target, prop, value);
 		return true;
 	}
@@ -19,7 +19,7 @@ const CrateProxy = {
 
 export default class Crate {
 	constructor(contents = {}) {
-		const observable = new Vue.observable(contents);
+		const observable = Vue.observable(contents);
 		return new Proxy(observable, CrateProxy);
 	}
 }

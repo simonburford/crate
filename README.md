@@ -1,27 +1,24 @@
 # Crate
 
-## Installation
-``` bash
-yarn add https://github.com/simonburford/crate
-```
+A simple state object for Vue 2
 
-## Usage
+### Usage
 ``` javascript
 import Crate from 'crate';
 
-const state = new Crate({
-	foo: 'foo',
-	bar: null,
-	fooBar() {
-		return `${this.foo} ${this.bar}`;
+const JohnSmith = new Crate({
+	firstName: 'John',
+	lastName: null,
+	fullName({ firstName, lastName }) {
+		return `${firstName} ${lastName}`;
 	},
 });
 
-console.log(state.foo) // foo
+console.log(JohnSmith.firstName) // John
 
-console.log(state.bar) // null
+console.log(JohnSmith.lastName) // null
 
-state.bar = 'bar!';
+JohnSmith.lastName = 'Smith';
 
-console.log(state.fooBar); // foo bar!
+console.log(JohnSmith.fullName); // John Smith
 ```
